@@ -55,40 +55,24 @@ chrome_browser.implicitly_wait(30)
 questao = chrome_browser.find_element(by = By.XPATH, value="/html/body/nav/div/ul/li[4]/a")
 questao.click()
 chrome_browser.implicitly_wait(30)
+
+#filtrar por multipla escolha
+modalidade_dropdown = chrome_browser.find_element(by = By.XPATH, value="/html/body/div[2]/main/form/div/div/div[3]/div[5]/div/button")
+modalidade_dropdown.click()
+chrome_browser.implicitly_wait(30)
+modalidade_check_box = chrome_browser.find_element(by =By.XPATH,value="/html/body/div[2]/main/form/div/div/div[3]/div[5]/div/div/div/ul/li[1]/label")
+modalidade_check_box.click()
+
 #ecreve no butão palavra-chave
 palavra_chave_text = chrome_browser.find_element(by = By.XPATH,value="/html/body/div[2]/main/form/div[2]/div/div[2]/div[1]/div/input")
 palavra_chave_summit_button = chrome_browser.find_element(by= By.XPATH, value="/html/body/div[2]/main/form/div[2]/div/div[2]/div[1]/div/div/button")
-print(estudar)
-palavra_chave_text.send_keys("Termodinâmica")
+palavra_chave_text.send_keys(estudar)
 palavra_chave_summit_button.click()
+chrome_browser.implicitly_wait(30)
+
+#salvar como pdf
+imprimir_button = chrome_browser.find_element(by=By.XPATH,value="/html/body/div[2]/main/div[2]/div[2]/form/div[1]/div[4]/div[2]/button")
+imprimir_button.click()
+chrome_browser.implicitly_wait(30)
 
 time.sleep(10000000)
-
-#salvar div contendo a questão em PDF
-from xhtml2pdf import pisa
-
-def convert_html_to_pdf(html_string, pdf_path):
-    with open(pdf_path, "wb") as pdf_file:
-        pisa_status = pisa.CreatePDF(html_string, dest=pdf_file)
-
-    return not pisa_status.err
-
-# HTML content
-html_content = '''
-<!DOCTYPE html>
-<html>
-<head>
-    <title>PDF Example</title>
-</head>
-<body>
-    <h1>Hello, world!</h1>
-</body>
-</html>
-'''
-
-# Generate PDF
-pdf_path = f"questão de {estudar}.pdf"
-if convert_html_to_pdf(html_content, pdf_path): #passa os argumentos, executa a função e passa o status True ou False tudo aqui
-    print(f"PDF generated and saved at {pdf_path}")
-else:
-    print("PDF generation failed")
