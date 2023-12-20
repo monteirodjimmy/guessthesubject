@@ -8,14 +8,23 @@ import time
  dicionário com os temas """
 
 assuntosEspecificos = {
-    "Termodinâmica": ["Energia", "Primeira Lei da termodinâmica", "Gases ideais", "Segunda Lei da Termodinâmica", "Entropia","Ciclo Rankine","Cliclo Bryton","Motor a Combustão Interna","Medidas de Pressão",
-                      "Pressão Manométrica","Trabalho, Energia Cinética, Energia Potêncial,Potência", "Balanço de Energia para Sistemas Fechados"],
-    "Transferência de Calor": ["Condução","Convecção","Radiação"],
-    "Resistência dos Materiais":["Tensão e deformação - Carga Axial","Trabalho Virtual","Flambagem","Tensão de cisalhamento","Tensão de Esmagamento",
+    "Termodinâmica": ["Energia", "1ª Lei da Termodinâmica", "Gases ideais", "2ª Lei da Termodinâmica", "Entropia","Ciclo Rankine","Cliclo Bryton","Motor a Combustão Interna","Medidas de Pressão",
+                      "Pressão Manométrica","Trabalho, Energia Cinética, Energia Potêncial,Potência", "Balanço de Energia para Sistemas Fechados","Compressores","Turbinas a vapor",],
+    "Transferência de Calor": ["Condução","Convecção","Radiação","Transferência de Calor"],
+    "Resistência dos Materiais":["Resistência dos Materiais","Mecânica dos Sólidos","Tensão e deformação","Trabalho Virtual","Flambagem","Tensão de cisalhamento","Tensão de Esmagamento",
                                  "Tensão em um plano oblíquo sob carregamento axial (Demonstrar)","Deformação de elementos sob carregamento axial (Demonstrar)",
                                  "Poisson","Lei de hooke Generalizada","Deformação de cisalhamento","Concentração de Tensão","Torção","Ângulo de torção em regime elástico (Demonstração)",
-                                 "Deflexão Pura"],
-    "Estática":["Momento de Inércia",""]
+                                 "Deflexão Pura","Elementos de Máquinas","Fadiga"],
+    "Estática":["Momento de Inércia","Sistemas Mecânicos",""],
+    "Dinâmica":["Cinemática","Cinética"],
+    "Ciência dos Materiais":["Materiais de Construção Mecânica","Propriedades e Comportamentos dos Materiais","Processos de Fabricação","Ensaios Mecânicos e Tratamentos Térmicos ","Soldagem"],
+    "Metrologia":["Metrologia","Pricínpios","Tolerâncias","Folgas e Ajustes"]
+}
+
+assuntosGerais = {
+    "Português":["Moforlogia","Sintaxe"],
+    "Raciocínio Lógico":["Diagrama de venn","Contagem","Arranjo","Combinação","Probabilidade","Sequência"],
+    "Informática":["Excel","Word","Linux","Navegadores"]
 }
 
 assuntoMacro = assuntosEspecificos[random.choice(list(assuntosEspecificos.keys()))]
